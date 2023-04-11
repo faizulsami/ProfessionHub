@@ -1,4 +1,21 @@
 .job-title{
-    font-weight: 700;
+    color: #1A1919;
+    font-style: normal;
     font-family: 'Manrope', sans-serif;
+}
+.job-details-custom{
+    color: #757575;
+    font-style: normal;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+}
+.job-details-custom-2{
+    color: #474747;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600px;
+}
+.apply-now-style{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700px;
+    font-style: normal;
 }
