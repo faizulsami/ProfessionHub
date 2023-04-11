@@ -1,0 +1,4 @@
+.custom-gap li {
+    position: absolute;
+    gap: 5px;
+}

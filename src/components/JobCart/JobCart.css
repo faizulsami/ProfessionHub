@@ -1,0 +1,21 @@
+.job-title{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color: #474747;
+    font-style: normal;
+}
+.companyName{
+    color: #757575;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.salary{
+    color: #757575;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+}
+.view-more{
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+}
