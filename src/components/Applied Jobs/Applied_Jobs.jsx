@@ -17,7 +17,7 @@ const Applied_Jobs = () => {
     return (
         <div>
             <PageHeader title={'Applied Job'}></PageHeader>
-            <div className='flex justify-end mt-20 me-8'>
+            <div className='flex lg:justify-end relative lg:right-96 lg:top-11'>
                 <Dropdown label="Filter By">
                     <Dropdown.Item onClick={() => setDataFilter('all')}>
                         Show All Jobs
