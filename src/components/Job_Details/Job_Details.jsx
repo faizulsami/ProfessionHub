@@ -8,30 +8,37 @@ const Job_Details = () => {
     const {id} = useParams()
     const [data , setData] = useState([])
     useEffect(()=>{
-        const LoadData = () => {
-            fetch('data.json')
-            .then(res => res.json())
-            .then(data => setData(data))
-        };
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/public/data.json');
+                const data = await response.json();
+                setData(data);
+            } catch (error) {
+                console.error(error);
+            }
+    };
+            fetchData();
     },[])
+    const matchId = data.find(d => d.id === parseInt(id));
     return (
         <div>
             <PageHeader title={'Job Details'}></PageHeader>
-            <div className='grid lg:gap-5 lg:grid-cols-2 relative lg:left-80 lg:mt-28 leading-10'>
+            {matchId && (
+                <div className='grid lg:gap-5 lg:grid-cols-2 relative lg:left-80 lg:mt-28 leading-10'>
                 <div>
                     <div>
-                    <p><span className='job-title lg:text-xl'>Job Description:</span> <span className='job-details-custom lg:text-lg'>A UI/UX (User Interface/User Experience) designer is responsible for designing and creating engaging and effective interfaces for software and web applications. This includes designing the layout, visual design, and interactivity of the user interface.</span></p>
+                    <p><span className='job-title lg:text-xl'>Job Description:</span> <span className='job-details-custom lg:text-lg'>{matchId.JobDescription}</span></p>
                     </div>
                     <div>
-                        <p><span className='job-title lg:text-xl'>Job Responsibility: </span><span className='job-details-custom lg:text-lg'>Collaborating with cross-functional teams: UI/UX designers often work closely with other teams, including product management, engineering, and marketing, to ensure that the user interface is aligned with business and technical requirements. You will need to be able to effectively communicate your design ideas and gather feedback from other team members.</span></p>
+                        <p><span className='job-title lg:text-xl'>Job Responsibility: </span><span className='job-details-custom lg:text-lg'>{matchId.jobResponsibility}</span></p>
                     </div>
                     <div>
                         <p className='job-title lg:text-xl'>Educational Requirements:</p>
-                        <p className=' job-details-custom lg:text-lg'>Bachelor degree to complete any reputational university.</p>
+                        <p className=' job-details-custom lg:text-lg'>{matchId.EducationalRequirements}</p>
                     </div>
                     <div>
                         <p className='job-title lg:text-xl'>Experiences: </p>
-                        <p className=' job-details-custom lg:text-lg'>2-3 Years in this field.</p>
+                        <p className=' job-details-custom lg:text-lg'>{matchId.Experience}</p>
                     </div>
                 </div>
                 <div>
@@ -51,6 +58,7 @@ const Job_Details = () => {
                     </Button>
                 </div>
             </div>
+            )}
         </div>
     );
 };
