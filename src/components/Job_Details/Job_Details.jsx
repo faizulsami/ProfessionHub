@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import PageHeader from '../PageHeader/PageHeader';
 import { Button } from 'flowbite-react';
 import './Job_Details.css'
+import {addToDb} from '../../utilities/fakedb'
 
 const Job_Details = () => {
     const {id} = useParams()
@@ -20,6 +21,9 @@ const Job_Details = () => {
             fetchData();
     },[])
     const matchId = data.find(d => d.id === parseInt(id));
+    const handleAddtoCart = (id) => {
+        addToDb(id)
+    }
     return (
         <div>
             <PageHeader title={'Job Details'}></PageHeader>
@@ -53,7 +57,7 @@ const Job_Details = () => {
                         <p><span className='job-details-custom-2 lg:text-lg'>Email :</span> <span className='job-details-custom lg:text-lg'>{matchId.email}</span></p>
                         <p><span className='job-details-custom-2 lg:text-lg'>Address :</span> <span className='job-details-custom lg:text-lg'>{matchId.address}</span></p>
                     </div>
-                    <Button className='lg:w-96 mt-4 lg:h-14 apply-now-style' gradientDuoTone="purpleToBlue">
+                    <Button onClick={()=>handleAddtoCart(matchId.id)} className='lg:w-96 mt-4 lg:h-14 apply-now-style' gradientDuoTone="purpleToBlue">
                         <p className='lg:text-xl apply-now-style'>Apply Now</p>
                     </Button>
                 </div>
