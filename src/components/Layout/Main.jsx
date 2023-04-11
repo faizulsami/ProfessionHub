@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from '../Header/Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 const Main = () => {
+    const path = useLocation().pathname
     return (
-        <div className='container mx-auto'>
-            <Header></Header>
-            <Outlet></Outlet>
+        <div className={ (path === '/') && 'mx-5 lg:mx-40'}>
+        { (path === '/') && <Header></Header>}
+        <Outlet></Outlet>
         </div>
     );
 };

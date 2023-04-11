@@ -2,6 +2,7 @@ import React from 'react';
 import './JobCart.css'
 import { Button, Card } from 'flowbite-react';
 import { MapPinIcon , CurrencyDollarIcon } from '@heroicons/react/24/solid'
+import { Link } from 'react-router-dom';
 const JobCart = ({ job }) => {
     return (
         <div className="mx-auto lg:mt-6">
@@ -27,9 +28,11 @@ const JobCart = ({ job }) => {
                             <p className='salary ps-1'>Salary:{job.Salary}</p>
                         </div>
                 </div>
-                        <Button className='view-more' gradientDuoTone="purpleToBlue">
+                        <Link to={`/job-details/${job.id}`}>
+                        <Button  className='view-more' gradientDuoTone="purpleToBlue">
                         View Details
                         </Button>
+                        </Link> 
             </Card>
         </div>
     );

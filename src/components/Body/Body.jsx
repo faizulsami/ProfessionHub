@@ -10,7 +10,7 @@ import { Button } from 'flowbite-react';
 
 const Body = ({data}) => {
     const [visible,setVisible] = useState(4);
-    const [show,setShow] = useState(true)
+    const [show,setShow] = useState(true);
     const seeMoreItems = () => {
         setVisible((prevValue => prevValue + 4))
     }
