@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
     return (
         <Navbar fluid={true} rounded={true}>
-            <Navbar.Brand href="https://flowbite.com/">
+            <Navbar.Brand>
                 <span className="web-name-font ms-3 self-center whitespace-nowrap text-2xl lg:text-4xl font-semibold dark:text-white">
                 ProfessionHub
                 </span>

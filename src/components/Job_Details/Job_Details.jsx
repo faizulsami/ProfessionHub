@@ -11,7 +11,7 @@ const Job_Details = () => {
     useEffect(()=>{
         const fetchData = async () => {
             try {
-                const response = await fetch('/public/data.json');
+                const response = await fetch('../data.json');
                 const data = await response.json();
                 setData(data);
             } catch (error) {
@@ -28,7 +28,7 @@ const Job_Details = () => {
         <div>
             <PageHeader title={'Job Details'}></PageHeader>
             {matchId && (
-                <div className='grid lg:gap-5 lg:grid-cols-2 relative lg:left-80 lg:mt-28 leading-10'>
+                <div className='lg:grid lg:gap-5 lg:grid-cols-2 relative left-2 lg:left-80 mt-4 lg:mt-28 leading-6 lg:leading-10'>
                 <div>
                     <div>
                     <p><span className='job-title lg:text-xl'>Job Description:</span> <span className='job-details-custom lg:text-lg'>{matchId.JobDescription}</span></p>
@@ -46,7 +46,7 @@ const Job_Details = () => {
                     </div>
                 </div>
                 <div>
-                    <div className='w-96 bg-indigo-100 p-8 pb-4 rounded-lg'>
+                    <div className='w-96 bg-indigo-100 lg:p-8 p-6 mt-5 lg:mt-0 lg:pb-4 rounded-lg'>
                         <h2 className='job-title lg:text-2xl pt-3'>Job Details</h2>
                         <hr className='w-80 border-indigo-200 my-4'/>
                         <p><span className='job-details-custom-2 lg:text-lg'>Salary :</span> <span className='job-details-custom lg:text-lg'>{matchId.Salary}</span></p>
