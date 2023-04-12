@@ -8,16 +8,18 @@ import Statistics from './components/Statistics/Statistics';
 import Applied_Jobs from './components/Applied Jobs/Applied_Jobs';
 import Blog from './components/Blog/Blog';
 import Job_Details from './components/Job_Details/Job_Details';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children:[
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('/data.json')
+        loader: () => fetch('/data.json'),
       },
       {
         path: "/statistics",
