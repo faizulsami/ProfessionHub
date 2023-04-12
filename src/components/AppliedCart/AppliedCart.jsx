@@ -4,7 +4,6 @@ import { MapPinIcon , CurrencyDollarIcon } from '@heroicons/react/24/solid'
 import './AppliedCart.css'
 
 const AppliedCart = ({data}) => {
-    
     return (
         <div className="w-3/6 lg:m-16 relative lg:left-96">
             <Card>
@@ -12,7 +11,7 @@ const AppliedCart = ({data}) => {
                     <img className='w-40 rounded-lg' src={data.img} alt=""/>
                     <div>
                         <p className='cart-title lg:text-xl'>{data.jobTitle}</p>
-                        <p className='company-name-style'>{data.companyName}</p>
+                        <p className='company-name-style-3 lg:text-lg'>{data.companyName}</p>
                         <div className='flex lg:my-4 lg:gap-4'>
                         <Button
                         outline={true}
@@ -27,14 +26,14 @@ const AppliedCart = ({data}) => {
                             {data.jobSchedule}
                         </Button>
                         </div>
-                        <div className='flex lg:gap-4'>
+                        <div className='flex lg:gap-4 custom-color'>
                             <div className='flex'>
-                                <MapPinIcon className="h-6 w-6 text-blue-500" />
-                                <p>{data.address}</p>
+                                <MapPinIcon className="h-6 w-6" />
+                                <p className='company-name-style-3 lg:text-lg'>{data.address}</p>
                             </div>
                             <div className='flex'>
-                                <CurrencyDollarIcon className="h-6 w-6 text-blue-500" />
-                                <p>Salary : {data.Salary}</p>
+                                <CurrencyDollarIcon className="h-6 w-6" />
+                                <p className='company-name-style-3 lg:text-lg'> Salary : {data.Salary}</p>
                             </div>
                         </div>
                     </div>
