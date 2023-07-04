@@ -1,4 +1,4 @@
-![image](https://github.com/faizulsami/ProfessionHub/assets/121633489/046bccf9-603a-4984-a76b-b2e884038a1e)﻿# b7a9-career-hub-faizulsami
+﻿# b7a9-career-hub-faizulsami
 * <h1>ProfessionHub</h1>
 * This job search website is built using the following technologies:
 
